@@ -1,0 +1,36 @@
+final_merged/
+├── Makefile
+├── includes/
+│   ├── minishell.h
+│   └── structs.h
+└── srcs/
+    ├── main.c
+    ├── init/
+    │   ├── init_shell.c
+    │   └── init_env.c
+    ├── lexer/
+    │   ├── tokenizer.c
+    │   └── token_utils.c
+    ├── parser/
+    │   ├── parser.c
+    │   ├── expand.c
+    │   └── parse_cmd.c
+    ├── executor/
+    │   ├── executor.c
+    │   ├── pipe_handler.c
+    │   └── redir_handler.c
+    ├── builtins/
+    │   ├── cd.c
+    │   ├── echo.c
+    │   ├── env.c
+    │   ├── exit.c
+    │   ├── export.c
+    │   ├── pwd.c
+    │   └── unset.c
+    ├── utils/
+    │   ├── env_utils.c
+    │   ├── free_utils.c
+    │   ├── error_utils.c
+    │   └── str_utils.c
+    └── signals/
+        └── signals.c
