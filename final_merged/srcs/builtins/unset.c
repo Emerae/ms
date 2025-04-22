@@ -1,4 +1,4 @@
-ft_builtin_unset(t_command *cmd, t_env *env_list)
+int	ft_builtin_unset(t_command *cmd, t_env *env_list)
 {
 	int	i;
 
