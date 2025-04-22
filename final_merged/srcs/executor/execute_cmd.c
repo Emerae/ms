@@ -78,7 +78,7 @@ static void	handle_cmd_child(t_cmd *cmd, t_data *data)
 	{
 		execute_builtin(cmd, data);
 		free_array(cmd_args);
-		exit_shell(data, g_exit_status);
+		exit_shell(data, data->exit_status);
 	}
 	envp = convert_env_to_array(data->env);
 	path = find_cmd_path(cmd_args[0], envp);
@@ -121,9 +121,9 @@ static void	execute_single_cmd(t_cmd *cmd, t_data *data)
 	{
 		waitpid(pid, &status, 0);
 		if (WIFEXITED(status))
-			g_exit_status = WEXITSTATUS(status);
+			data->exit_status = WEXITSTATUS(status);
 		else if (WIFSIGNALED(status))
-			g_exit_status = 128 + WTERMSIG(status);
+			data->exit_status = 128 + WTERMSIG(status);
 	}
 }
 
